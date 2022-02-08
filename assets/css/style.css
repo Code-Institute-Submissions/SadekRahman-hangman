@@ -1,8 +1,24 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: medium;
+    font-family: 'Courier New', Courier;
     color: darkslategray;
     background-color: grey;
-    margin: 0 auto;
     text-align: center;
+}
+button {
+    font-family: 'Courier New', Courier;
+    color: darkslategray;
+    background-color: lightgray;
+    text-align: center;
+    border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+h1, h2 {
+    position: relative;
+}
+canvas {
+    border-style: dashed;
+}
+#answer {
+    text-decoration: underline;
 }

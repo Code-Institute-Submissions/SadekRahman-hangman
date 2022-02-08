@@ -11,10 +11,36 @@
     <title>Hangman</title>
 </head>
 <body>
-    <div id = "choose-category">
+    <div id = "Topic">
         <h1>Hangman</h1>
-        <h2>Pick a category</h2>
+        <h2>Pick a Topic</h2>
     </div>
+    <div id = "categories">
+        <button data-type="Football">English Football Teams</button>
+        <button data-type="Actors">Famous Actors</button>
+        <button data-type="Capitals">Capitals of the World</button>
+    </div>
+    <div>
+        <div id="alphabet">
+
+        </div>
+        <div id="chosenTopic">
+            <p>Your chosen topic is</p>
+        </div>
+        <div id="gameLayout">
+            <canvas id="hangman">
+
+            </canvas>
+            <div id="answer">
+                <p>Answer to Hangman</p>
+            </div>
+
+        </div>
+        <div>
+            <button id="reset">Play Again</button>
+        </div>
+    </div>
+
     
     <script src="assets/js/script.js"></script>
 </body>
