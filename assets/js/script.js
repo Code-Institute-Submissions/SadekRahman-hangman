@@ -30,6 +30,23 @@ const capitals = [
     "Berlin",
 ]
 
+let answer = "";
+let maxAttempts = "10";
+let errors = "0";
+let numberOfAttempts = [];
+
+function randomWord (topicChoice) {
+    if (topicChoice === football) {
+        answer = football[Math.floor(math.random() * football.length)]
+    } else if (topicChoice === actors) {
+        answer = football[Math.floor(math.random() * actors.length)]
+    } else if (topicChoice === football) {
+        answer = capitals[Math.floor(math.random() * capitals.length)]
+    } else {
+        alert(`Unknown topic : ${topicChoice}`);
+        throw `Unknown topic : ${topicChoice}. Please Refresh`;
+    }
+}
 
 
 
