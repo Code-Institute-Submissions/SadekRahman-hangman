@@ -18,6 +18,7 @@ h1, h2 {
 }
 canvas {
     border-style: dashed;
+    width: 85%;
 }
 #answer {
     text-decoration: underline;
