@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+                let topicChoice = this.getAttribute("data-type");
+                randomWord(topicChoice);
+            });
+    }
+
+});
 const football = [
     "Arsenal",
     "Manchester United",
@@ -37,15 +48,16 @@ let numberOfAttempts = [];
 
 function randomWord (topicChoice) {
     if (topicChoice === football) {
-        answer = football[Math.floor(math.random() * football.length)]
+        answer = football[Math.floor(Math.random() * football.length)]
     } else if (topicChoice === actors) {
-        answer = football[Math.floor(math.random() * actors.length)]
-    } else if (topicChoice === football) {
-        answer = capitals[Math.floor(math.random() * capitals.length)]
+        answer = football[Math.floor(Math.random() * actors.length)]
+    } else if (topicChoice === capitals) {
+        answer = capitals[Math.floor(Math.random() * capitals.length)]
     } else {
         alert(`Unknown topic : ${topicChoice}`);
         throw `Unknown topic : ${topicChoice}. Please Refresh`;
     }
+    alert = answer;
 }
 
 
@@ -53,7 +65,7 @@ function randomWord (topicChoice) {
 //create alphabet
 let alphabet = function () {
     theAlphabet = document.getElementById("alphabet");
-    letters = document.createElement("ol");
+    letters = document.createElement("ul");
     for (let i=0; i < alphabet.length; i++);
 
 }
