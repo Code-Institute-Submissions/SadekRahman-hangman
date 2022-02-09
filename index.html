@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- font awesome and google fonts -->
-     <link rel="stylesheet" href="">
-     <link href="" rel="stylesheet">
+    <!-- font awesome and google fonts -->
+    <link rel="stylesheet" href="">
+    <link href="" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Hangman</title>
 </head>
+
 <body>
-    <div id = "Topic">
-        <h1>Hangman</h1>
-        <h2>Pick a Topic</h2>
-    </div>
-    <div id = "topics">
-        <button data-type="Football" >English Football Teams</button>
-        <button data-type="Actors" >Actors</button>
-        <button data-type="Capitals" >Capital Cities</button>
-    </div>
     <div>
-        <p>Your chosen topic is <span id="chosenTopic"></span></p>
+        <h1>Hangman</h1>
     </div>
+
     <canvas id="hangman">
+
     </canvas>
     <div id="answer">
+        <button id="start" onclick="runGame()">Begin</button>
     </div>
-    <div id="buttons">   
-    </div>  
+    <div id="wordSpotlight">
+
+    </div>
+    <div id="buttons">
+
+    </div>
+    <div id="incorrect-letters">
+
+    </div>
+
     <p id="lives">
+
     </p>
     <div>
-        <button data-type="Reset">Play Again</button>
+        <button id="clue">Clue</button>
+    </div>
+    <div>
+        <button id="Reset">Play Again</button>
     </div>
     </div>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

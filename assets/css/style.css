@@ -4,6 +4,7 @@ body {
     background-color: grey;
     text-align: center;
 }
+
 button {
     font-family: 'Courier New', Courier;
     color: darkslategray;
@@ -13,13 +14,21 @@ button {
     font-weight: bold;
     cursor: pointer;
 }
-h1, h2 {
+
+h1,
+h2 {
     position: relative;
 }
+
 canvas {
     border-style: dashed;
-    width: 85%;
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    height: 250px;
 }
+
 #answer {
     text-decoration: underline;
+    margin-left: 20px;
 }

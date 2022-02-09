@@ -1,8 +1,10 @@
 //variables from HTMl page
-const answerEl = document.getElementbyId("answer");
-const clueEl = document.getElementbyId("clue");
-const incorrectLettersEl = document.getElementbyId("incorrect-letters");
-const restart = document.getElementbyId("restart");
+const answer = "";
+const clueEl = document.getElementById("clue");
+const guesses = [];
+const maxIncorrectLetters = 10;
+const incorrectLetters = 0;
+const wordStatus = null;
 
 //array of words
 const words = [
@@ -47,7 +49,7 @@ const clues = [
     "Actor",
     "Actor",
     "Actor",
-    "Actress".
+    "Actress",
     "Actor",
     "Actor",
     "Capital City",
@@ -64,27 +66,27 @@ const clues = [
 const correctLetters = [];
 const incorrectLetters = [];
 
-let gameFinish = true;
-
-
 //choosing the random word
 function randomWord() {
     answer = words[Math.floor(Math.random() * words.length)];
     alert(answer);
 }
 
-//hiding the randwom word    
-function chosenWord() {
-    word.innerHTML = `
-    ${randomWord.split("").map(
-        (letter) => `
+//showing the chosen word   
+function showWord() {
+    gameFinish = false;
+    wordSpotlight.innerHTML = `
+    ${chosenWord.split('').map(
+        function (letter) {
+            return `
             <span class="letter">
-            ${correctLetters.includes(letter) ? letter: ""} </span>`)
+            ${correctLetters.includes(letter) ? letter : ""} </span>`;
+        })
         .join("")}`;
     let hiddenWord = word.innerText.replace(/\n/g, "");
     if (hiddenWord === randomWord) {
         alert(won);
     }
 }
-randomWord;
-chosenWord;
+runGame;
+showWord;
