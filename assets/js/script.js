@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
-const football = [
+let football = [
     "Arsenal",
     "Manchester United",
     "Manchester City",
@@ -20,7 +20,7 @@ const football = [
     "Wolves",
     "Liverpool",
 ]
-const actors = [
+let actors = [
     "Dwayne Johnson",
     "Robert Downey Jr",
     "Chris Hemsworth",
@@ -29,7 +29,7 @@ const actors = [
     "Al Pacino",
     "Cilian Murphy"
 ]
-const capitals = [
+let capitals = [
     "London",
     "Madrid",
     "Paris",
@@ -42,30 +42,25 @@ const capitals = [
 ]
 
 let answer = "";
-let maxAttempts = "10";
-let errors = "0";
-let numberOfAttempts = [];
-
-function randomWord (topicChoice) {
-    if (topicChoice === football) {
-        answer = football[Math.floor(Math.random() * football.length)]
-    } else if (topicChoice === actors) {
-        answer = football[Math.floor(Math.random() * actors.length)]
-    } else if (topicChoice === capitals) {
-        answer = capitals[Math.floor(Math.random() * capitals.length)]
-    } else {
-        alert(`Unknown topic : ${topicChoice}`);
-        throw `Unknown topic : ${topicChoice}. Please Refresh`;
+let errors = [];
+let correctLetters = [];
+let word = document.getElementById(answer);
+let won= "You Won! Well Done"
+//choosing the random word
+function randomWord() {
+    answer = football[Math.floor(Math.random() * football.length)];
+    //alert(answer);
     }
-    alert = answer;
-}
-
-
-
-//create alphabet
-let alphabet = function () {
-    theAlphabet = document.getElementById("alphabet");
-    letters = document.createElement("ul");
-    for (let i=0; i < alphabet.length; i++);
-
+//hiding the randwom word    
+function chosenWord() {
+    word.innerHTML = `
+    ${randomWord.split("").map(
+        (letter) => `
+            <span class="letter">
+            ${correctLetters.includes(letter) ? letter: ""} </span>`)
+        .join("")}`;
+    let hiddenWord = word.innerText.replace(/\n/g, "");
+    if (hiddenWord === randomWord) {
+    alert(won);
+    }
 }
