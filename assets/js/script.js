@@ -3,12 +3,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
-                let topicChoice = this.getAttribute("data-type");
+                let topicChoice = this.getAttribute("id");
                 randomWord(topicChoice);
             });
     }
 
 });
+
+
+let answer = "";
+let errors = [];
+let correctLetters = [];
+let word = document.getElementById(answer);
+let won= "You Won! Well Done"
+let topics = [];
+let chosenTopic = "";
+
 let football = [
     "Arsenal",
     "Manchester United",
@@ -40,12 +50,26 @@ let capitals = [
     "Dhaka",
     "Berlin",
 ]
+//select Topic
+function runGame(topicChoice) {
+    if (gameType === "football") {
+        footballChosenWord;
+    } else if (gameType === "actors") {
+        actorsChosenWord;
+    } else if (gameType === "capitals" ) {
+        capitalsChosenWord;
+    } else {
+        alert(`Unknown game type: ${gameType}`);
+        throw `Unknown game type: ${gameType}. Please Refresh`;
+    }
+    
+    
+}
 
-let answer = "";
-let errors = [];
-let correctLetters = [];
-let word = document.getElementById(answer);
-let won= "You Won! Well Done"
+
+
+
+
 //choosing the random word
 function randomWord() {
     answer = football[Math.floor(Math.random() * football.length)];
@@ -64,3 +88,6 @@ function chosenWord() {
     alert(won);
     }
 }
+runGame;
+randomWord;
+chosenWord;

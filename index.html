@@ -15,33 +15,26 @@
         <h1>Hangman</h1>
         <h2>Pick a Topic</h2>
     </div>
-    <div id = "categories">
-        <button data-type="football" >English Football Teams</button>
-       <!-- <button data-type="Actors" >actors</button>
-        <button data-type="Capitals" >capitals</button> -->
+    <div id = "topics">
+        <button data-type="Football" >English Football Teams</button>
+        <button data-type="Actors" >Actors</button>
+        <button data-type="Capitals" >Capital Cities</button>
     </div>
     <div>
-        <div id="alphabet">
-
-        </div>
-        <div id="chosenTopic">
-            <p>Your chosen topic is</p>
-        </div>
-        <div id="gameLayout">
-            <canvas id="hangman">
-
-            </canvas>
-            <div id="answer">
-                <p>Answer to Hangman</p>
-            </div>
-
-        </div>
-        <div>
-            <button data-type="Reset" id="reset">Play Again</button>
-        </div>
+        <p>Your chosen topic is <span id="chosenTopic"></span></p>
     </div>
-
-    
+    <canvas id="hangman">
+    </canvas>
+    <div id="answer">
+    </div>
+    <div id="buttons">   
+    </div>  
+    <p id="lives">
+    </p>
+    <div>
+        <button data-type="Reset">Play Again</button>
+    </div>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
