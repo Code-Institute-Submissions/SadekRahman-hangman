@@ -1,25 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
+//variables from HTMl page
+const answerEl = document.getElementbyId("answer");
+const clueEl = document.getElementbyId("clue");
+const incorrectLettersEl = document.getElementbyId("incorrect-letters");
+const restart = document.getElementbyId("restart");
 
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-                let topicChoice = this.getAttribute("id");
-                randomWord(topicChoice);
-            });
-    }
-
-});
-
-
-let answer = "";
-let errors = [];
-let correctLetters = [];
-let word = document.getElementById(answer);
-let won= "You Won! Well Done"
-let topics = [];
-let chosenTopic = "";
-
-let football = [
+//array of words
+const words = [
     "Arsenal",
     "Manchester United",
     "Manchester City",
@@ -29,17 +15,13 @@ let football = [
     "Aston Villa",
     "Wolves",
     "Liverpool",
-]
-let actors = [
     "Dwayne Johnson",
     "Robert Downey Jr",
     "Chris Hemsworth",
     "Chris Evans",
     "Scarlett Johansen",
     "Al Pacino",
-    "Cilian Murphy"
-]
-let capitals = [
+    "Cilian Murphy",
     "London",
     "Madrid",
     "Paris",
@@ -48,33 +30,49 @@ let capitals = [
     "Beijing",
     "Mumbai",
     "Dhaka",
-    "Berlin",
+    "Berlin"
 ]
-//select Topic
-function runGame(topicChoice) {
-    if (gameType === "football") {
-        footballChosenWord;
-    } else if (gameType === "actors") {
-        actorsChosenWord;
-    } else if (gameType === "capitals" ) {
-        capitalsChosenWord;
-    } else {
-        alert(`Unknown game type: ${gameType}`);
-        throw `Unknown game type: ${gameType}. Please Refresh`;
-    }
-    
-    
-}
+//array of corresponding clues
+const clues = [
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Football Team",
+    "Actor",
+    "Actor",
+    "Actor",
+    "Actor",
+    "Actress".
+    "Actor",
+    "Actor",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+    "Capital City",
+]
+//variable to track performance
+const correctLetters = [];
+const incorrectLetters = [];
 
-
-
+let gameFinish = true;
 
 
 //choosing the random word
 function randomWord() {
-    answer = football[Math.floor(Math.random() * football.length)];
-    //alert(answer);
-    }
+    answer = words[Math.floor(Math.random() * words.length)];
+    alert(answer);
+}
+
 //hiding the randwom word    
 function chosenWord() {
     word.innerHTML = `
@@ -85,9 +83,8 @@ function chosenWord() {
         .join("")}`;
     let hiddenWord = word.innerText.replace(/\n/g, "");
     if (hiddenWord === randomWord) {
-    alert(won);
+        alert(won);
     }
 }
-runGame;
 randomWord;
 chosenWord;
