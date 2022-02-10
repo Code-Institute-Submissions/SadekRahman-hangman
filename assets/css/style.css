@@ -1,12 +1,12 @@
 body {
-    font-family: 'Courier New', Courier;
+    font-family: 'sans-serif';
     color: darkslategray;
     background-color: grey;
     text-align: center;
 }
 
 button {
-    font-family: 'Courier New', Courier;
+    font-family: 'sans-serif';
     color: darkslategray;
     background-color: lightgray;
     text-align: center;

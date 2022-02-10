@@ -2,8 +2,7 @@
 let chosenWord = "";
 let clueEl = document.getElementById("clue");
 let guesses = [];
-let maxIncorrectLetters = 10;
-let incorrectLetters = 0;
+let incorrectGuesses = 0;
 let guessWeight = null;
 
 //array of words
@@ -62,12 +61,19 @@ let clues = [
     "Capital City",
     "Capital City",
 ]
-//variable to track performance
-//const correctLetters = [];
+//storing of letters
+let correctLetters = [];
+let incorrectLetters = [];
+//decalred variable for chosen word/hint
+let chosenWord;
+let chosenCLue;
 
-//choosing the random word
+//choosing the random word with clue
 function randomWord() {
     chosenWord = football_actor_capitals[Math.floor(Math.random() * football_actor_capitals.length)];
+    chosenCLue = clues[Math.floor(Math.random() * clues.length)];
+
+    showWord();
   }
 
 //generating an interactive keyboard
@@ -86,6 +92,9 @@ function generateKeyboard() {
 function showWord() {
     guessWeight = chosenWord.split('').map(letter => (guesses.indexOf(letter) >= 0 ? letter : "_")).join('');
     document.getElementById("wordFocus").innerHTML = guessWeight;
+
+    //show clue
+    $('#clue').innerHTMl(`<p>Clue: ${chosenCLue}</p>`);
 }
 
 randomWord();
