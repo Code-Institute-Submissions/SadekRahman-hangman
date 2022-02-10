@@ -1,3 +1,6 @@
+//event listener needed for click on "Begin" to initate Game
+runGame();
+
 //variables from HTMl page
 let chosenWord = "";
 let clueEl = document.getElementById("clue");
@@ -69,7 +72,7 @@ let chosenWord;
 let chosenCLue;
 
 //choosing the random word with clue
-function randomWord() {
+function randomWord(football_actor_capitals,clues) {
     chosenWord = football_actor_capitals[Math.floor(Math.random() * football_actor_capitals.length)];
     chosenCLue = clues[Math.floor(Math.random() * clues.length)];
 
@@ -89,14 +92,15 @@ function generateKeyboard() {
 }
 
 //showing the chosen word   
-function showWord() {
+function showWord(chosenCLue,chosenWord) {
     guessWeight = chosenWord.split('').map(letter => (guesses.indexOf(letter) >= 0 ? letter : "_")).join('');
     document.getElementById("wordFocus").innerHTML = guessWeight;
 
     //show clue
     $('#clue').innerHTMl(`<p>Clue: ${chosenCLue}</p>`);
 }
-
+function runGame (){
 randomWord();
 generateKeyboard();
 showWord();
+}
