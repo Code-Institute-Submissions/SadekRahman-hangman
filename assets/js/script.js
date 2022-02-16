@@ -103,5 +103,5 @@ function showWord(chosenCLue,chosenWord) {
     const innerWord = wordEl.innerText.replace(/\n/g,'');
 
     //show clue
-    clueEl.innerHTMl(`<p>Clue: ${chosenCLue}</p>`);
+    clueEl.innerHTMl = (`<p>Clue:${chosenCLue}</p>`);
 }
