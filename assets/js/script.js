@@ -1,11 +1,7 @@
-//event listener needed for click on "Begin" to initate Game
-runGame();
-
-//variables from HTMl page
-let chosenWord = "";
-let guesses = [];
-let incorrectGuesses = 0;
-let guessWeight = null;
+//variables
+let wordEl = document.getElementById("word");
+let clueEl = document.getElementById("clue");
+let incorrectLettersEl = document.getElementById("incorrect-letters");
 
 //array of words
 let words = [
@@ -63,24 +59,15 @@ let clues = [
     "Capital City",
     "Capital City",
 ]
-
-//choosing the random word with clue
-function randomWord(words,clues) {
-    randomNumber = Math.floor(Math.random());
-    chosenWord = randomNumber * words.length;
-    chosenCLue = randomNumber * clues.length;
-   // showWord();
+//event listener needed for click on "Begin" to initiate Game
+//choosing the random word with clue - perhaps need some rewriting - need to do same index of two different arrays
+function runGame(words,clues) {
+    let randomNumber = Math.floor(Math.random());
+    let chosenWord = randomNumber * words.length;
+    let chosenCLue = randomNumber * clues.length;
+    generateKeyboard();
+    showWord();
 }
-
-//storing of letters as an array
-const correctLetters = [];
-const incorrectLetters = [];
-
-//decalred variable for chosen word/hint
-let chosenWord;
-let chosenCLue;
-
-
 
 //generating an interactive keyboard
 function generateKeyboard() {
@@ -94,16 +81,27 @@ function generateKeyboard() {
     document.getElementById("keyboard").innerHTML = buttonsHTML;
 }
 
+//storing of letters as an array
+const correctLetters = [];
+const incorrectLetters = [];
+
 //showing the chosen word   
 function showWord(chosenCLue,chosenWord) {
-    guessWeight = chosenWord.split('').map(letter => (guesses.indexOf(letter) >= 0 ? letter : "_")).join('');
-    document.getElementById("wordFocus").innerHTML = guessWeight;
+    //chosen word hidden display
+    wordEl.innerHTML = `
+        ${chosenWord
+        .split('')
+        .map(
+          (letter) => `
+            <span class="letter">
+              ${correctLetters.includes(letter) ? letter : ''}
+            </span>
+        `)
+        .join('')}
+    `;
+
+    const innerWord = wordEl.innerText.replace(/\n/g,'');
 
     //show clue
-    $('#clue').innerHTMl(`<p>Clue: ${chosenCLue}</p>`);
-}
-function runGame (){
-randomWord();
-generateKeyboard();
-showWord();
+    clueEl.innerHTMl(`<p>Clue: ${chosenCLue}</p>`);
 }
