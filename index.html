@@ -17,29 +17,29 @@
         <h1>Hangman</h1>
     </div>
 
-    <canvas id="hangman">
+    <canvas id="hangman-figure">
 
     </canvas>
+    <!--id answer is incorrect-->
     <div id="answer">
         <button id="start" onclick="runGame()">Begin</button>
     </div>
-    <div id="wordFocus">
+    <div class="word" id="word">
 
+    </div>
+    <div id="mistakes-container">
+        <div id="incorrect-letters">
+
+        </div>
     </div>
     <div id="keyboard">
 
     </div>
-    <div id="incorrect-letters">
-
-    </div>
-
-    <p id="lives">
-
-    </p>
     <div>
         <button id="clue">Clue</button>
     </div>
-    <div>
+    <div class="final-message" id="final-message">
+        <p id="final-message-text"></p>
         <button id="Reset">Play Again</button>
     </div>
     </div>
