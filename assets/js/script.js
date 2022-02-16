@@ -63,23 +63,24 @@ let clues = [
     "Capital City",
     "Capital City",
 ]
-//storing of letters
-let correctLetters = [];
-let incorrectLetters = [];
-//decalred variable for chosen word/hint
-let chosenWord;
-let chosenCLue;
 
 //choosing the random word with clue
 function randomWord(words,clues) {
     randomNumber = Math.floor(Math.random());
     chosenWord = randomNumber * words.length;
     chosenCLue = randomNumber * clues.length;
-    alert(chosenWord,chosenCLue);
-
-
    // showWord();
-  }
+}
+
+//storing of letters as an array
+const correctLetters = [];
+const incorrectLetters = [];
+
+//decalred variable for chosen word/hint
+let chosenWord;
+let chosenCLue;
+
+
 
 //generating an interactive keyboard
 function generateKeyboard() {
