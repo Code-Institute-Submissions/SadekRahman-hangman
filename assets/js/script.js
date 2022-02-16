@@ -3,13 +3,12 @@ runGame();
 
 //variables from HTMl page
 let chosenWord = "";
-let clueEl = document.getElementById("clue");
 let guesses = [];
 let incorrectGuesses = 0;
 let guessWeight = null;
 
 //array of words
-let football_actor_capitals = [
+let words = [
     "Arsenal",
     "Manchester United",
     "Manchester City",
@@ -72,11 +71,14 @@ let chosenWord;
 let chosenCLue;
 
 //choosing the random word with clue
-function randomWord(football_actor_capitals,clues) {
-    chosenWord = football_actor_capitals[Math.floor(Math.random() * football_actor_capitals.length)];
-    chosenCLue = clues[Math.floor(Math.random() * clues.length)];
+function randomWord(words,clues) {
+    randomNumber = Math.floor(Math.random());
+    chosenWord = randomNumber * words.length;
+    chosenCLue = randomNumber * clues.length;
+    alert(chosenWord,chosenCLue);
 
-    showWord();
+
+   // showWord();
   }
 
 //generating an interactive keyboard
