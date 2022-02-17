@@ -105,3 +105,14 @@ function showWord(chosenCLue,chosenWord) {
     //show clue
     clueEl.innerHTMl = (`<p>Clue:${chosenCLue}</p>`);
 }
+
+//updating and showing the incorrect letters
+function updateIncorrectLettersEl () {
+    
+    incorrectLettersEl.innerHTML = `
+    ${incorrectLetters.length > 0 ? "<h4>Incorrect Attempts</h4>":""}
+    ${incorrectLetters.map((letter) => {
+        return `<span>${letter}</span>`;
+    })}`
+
+}
