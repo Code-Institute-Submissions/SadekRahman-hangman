@@ -149,4 +149,23 @@ function updateIncorrectLettersEl () {
         
     });
 
-    
+    //check if game lost
+    if (incorrectLetters.length === figureParts.length) {
+        gameFinish = true;
+
+        $('#final-message-text').html("Haha! Loser");
+
+        //show the correct answer if lost
+
+        wordEl.innerHTML = `
+        ${chosenWord
+        .split('')
+        .map(
+          chosenWord => `
+            <span class="letter">
+              ${chosenWord}
+            </span>
+        `)
+        .join('')}
+    `;
+    } 
