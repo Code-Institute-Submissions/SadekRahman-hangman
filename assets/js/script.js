@@ -3,7 +3,10 @@ let wordEl = document.getElementById("word");
 let clueEl = document.getElementById("clue");
 let incorrectLettersEl = document.getElementById("incorrect-letters");
 
-let figureParts = document.querySelectorAll("figure-part");
+let figureParts = document.querySelectorAll(".figure-part");
+
+let chosenWord;
+let chosenCLue;
 
 //array of words
 let words = [
@@ -63,30 +66,17 @@ let clues = [
 ]
 //event listener needed for click on "Begin" to initiate Game
 //choosing the random word with clue - perhaps need some rewriting - need to do same index of two different arrays
-function runGame(words,clues) {
+function runGame() {
     let randomNumber = Math.floor(Math.random());
-    let chosenWord = randomNumber * words.length;
-    let chosenCLue = randomNumber * clues.length;
-    generateKeyboard();
+    chosenWord = randomNumber * words.length;
+    chosenCLue = randomNumber * clues.length;
+
+    //Set no-display on hangman figure
+    $('.figure.part').css('display', 'none');
+    
     showWord();
+    generateKeyboard();
 }
-
-//generating an interactive keyboard
-function generateKeyboard() {
-    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-    `
-    <button id = '${letter}'
-    onClick = 'decideChoice("${letter}') >
-    ${letter}
-    </button>
-    `).join('');
-    document.getElementById("keyboard").innerHTML = buttonsHTML;
-}
-
-//storing of letters as an array
-const correctLetters = [];
-const incorrectLetters = [];
-
 //showing the chosen word   
 function showWord(chosenCLue,chosenWord) {
     //chosen word hidden display
@@ -107,6 +97,23 @@ function showWord(chosenCLue,chosenWord) {
     //show clue
     clueEl.innerHTMl = (`<p>Clue:${chosenCLue}</p>`);
 }
+//generating an interactive keyboard
+function generateKeyboard() {
+    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+    `
+    <button id = '${letter}'
+    onClick = 'decideChoice("${letter}') >
+    ${letter}
+    </button>
+    `).join('');
+    document.getElementById("keyboard").innerHTML = buttonsHTML;
+}
+
+//storing of letters as an array
+const correctLetters = [];
+const incorrectLetters = [];
+
+
 
 //updating and showing the incorrect letters
 function updateIncorrectLettersEl () {
