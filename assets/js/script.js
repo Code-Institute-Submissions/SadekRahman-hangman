@@ -134,9 +134,10 @@ const incorrectLetters = [];
 function updateIncorrectLettersEl () {
     
     incorrectLettersEl.innerHTML = `
-    ${incorrectLetters.length > 0 ? "<h4>Incorrect Attempts</h4>":""}
-    ${incorrectLetters.map((letter) => {
-        return `<span>${letter}</span>`;
-    })}`
+    ${incorrectLetters.length > 0 ? "<h4>Incorrect Attempts</h4>"  : ""}
+    ${incorrectLetters.map((letter) => `<span>${letter}</span>`)}`;
+
+    //display parts
+
 
 }
