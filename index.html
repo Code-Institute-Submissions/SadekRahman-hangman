@@ -16,20 +16,21 @@
     <div>
         <h1>Hangman</h1>
     </div>
+    <div class="game-container">
+        <svg height="300" width="300" class="hangman-container">
 
-    <canvas id="hangman-figure">
+        </svg>
+        <!--id answer is incorrect-->
+        <div id="answer">
+            <button id="start" onclick="runGame()">Begin</button>
+        </div>
+        <div class="word" id="word">
 
-    </canvas>
-    <!--id answer is incorrect-->
-    <div id="answer">
-        <button id="start" onclick="runGame()">Begin</button>
-    </div>
-    <div class="word" id="word">
+        </div>
+        <div id="mistakes-container">
+            <div id="incorrect-letters">
 
-    </div>
-    <div id="mistakes-container">
-        <div id="incorrect-letters">
-
+            </div>
         </div>
     </div>
     <div id="keyboard">

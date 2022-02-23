@@ -3,6 +3,8 @@ let wordEl = document.getElementById("word");
 let clueEl = document.getElementById("clue");
 let incorrectLettersEl = document.getElementById("incorrect-letters");
 
+let figureParts = document.querySelectorAll("figure-part");
+
 //array of words
 let words = [
     "Arsenal",
