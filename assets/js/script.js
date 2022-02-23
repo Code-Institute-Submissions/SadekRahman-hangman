@@ -5,6 +5,8 @@ let incorrectLettersEl = document.getElementById("incorrect-letters");
 
 let figureParts = document.querySelectorAll(".figure-part");
 
+let gameFinish = true;
+
 let chosenWord;
 let chosenCLue;
 
@@ -67,6 +69,7 @@ let clues = [
 //event listener needed for click on "Begin" to initiate Game
 //choosing the random word with clue - perhaps need some rewriting - need to do same index of two different arrays
 function runGame() {
+ 
     let randomNumber = Math.floor(Math.random());
     chosenWord = randomNumber * words.length;
     chosenCLue = randomNumber * clues.length;
@@ -79,6 +82,11 @@ function runGame() {
 }
 //showing the chosen word   
 function showWord(chosenCLue,chosenWord) {
+    gameFinish = false;
+
+    //show clue
+    clueEl.innerHTMl = (`<p>Clue:${chosenCLue}</p>`);
+    
     //chosen word hidden display
     wordEl.innerHTML = `
         ${chosenWord
@@ -94,8 +102,15 @@ function showWord(chosenCLue,chosenWord) {
 
     const innerWord = wordEl.innerText.replace(/\n/g,'');
 
-    //show clue
-    clueEl.innerHTMl = (`<p>Clue:${chosenCLue}</p>`);
+    //check if game is won
+    if (innerWord === chosenWord) {
+        gameFinish = true;
+
+        $('#final-message-text').html("Correct! Winninggg");
+
+    }
+
+    
 }
 //generating an interactive keyboard
 function generateKeyboard() {
