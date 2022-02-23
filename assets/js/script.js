@@ -138,6 +138,15 @@ function updateIncorrectLettersEl () {
     ${incorrectLetters.map((letter) => `<span>${letter}</span>`)}`;
 
     //display parts
+    figureParts.forEach((part, index) => {
+        let errors = incorrectLetters.length;
 
+        if (index < errors) {
+            part.style.display = 'block';
+        } else {
+            part.style.display = 'none';
+        }
+        
+    });
 
-}
+    
